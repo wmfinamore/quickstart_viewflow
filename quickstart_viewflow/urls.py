@@ -12,10 +12,23 @@ Class-based views
 Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
+
 from django.contrib import admin
 from django.urls import path
 
 urlpatterns = [
+
+    path('admin/', admin.site.urls),
+]
+"""
+from django.conf.urls import include, url
+from django.contrib import admin
+from django.urls import path
+from django.views import generic
+from material.frontend import urls as frontend_urls
+
+urlpatterns = [
+    url(r'^$', generic.RedirectView.as_view(url='/workflow/', permanent=False)),
+    url(r'', include(frontend_urls)),
     path('admin/', admin.site.urls),
 ]

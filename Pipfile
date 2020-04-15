@@ -9,6 +9,7 @@ verify_ssl = true
 django = "*"
 django-material = "*"
 django-viewflow = "*"
+material = "*"
 
 [requires]
 python_version = "3.7"
